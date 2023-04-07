@@ -6,7 +6,14 @@ M.g = {
 
 M.opt = {
   number = true,
-  relativenumber = true
+  relativenumber = true,
+  cursorline = true,
+  tabstop = 2,
+  softtabstop = 2,
+  shiftwidth = 2,
+  autoindent = true,
+  expandtab = true,
+  clipboard = "unnamedplus",
 }
 
 

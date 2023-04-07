@@ -1,7 +1,6 @@
 local plugins = require("tools.lazy-plugins")
 
 local spec = {}
-
 vim.list_extend(spec,{ { import = "plugins" }, plugins })
 
 return {
