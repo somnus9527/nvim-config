@@ -1,9 +1,9 @@
 return {
   "folke/which-key.nvim",
   lazy = false,
-  config = function() 
+  config = function()
     vim.o.timeout = true
-    vim.o.timeoutlen = 2000
+    vim.o.timeoutlen = 300
     require("which-key").setup {}
 
     require("tools.key-registry")

@@ -1,63 +1,34 @@
-local default_opt = {
-  mode = "n",
-  prefix = "",
-  buffer = nil,
-  silent = true,
-  noremap = true,
-  nowait = false,
-}
-
-local default_no_opt = { noremap = true, silent = true }
-
 local M = {
   registry = {
-    {
-      opt = {
-        prefix = "<leader>",
-      },
-      map = {
-        e = {
-          name = "NeoTree",
-          e = {
-            "<cmd>Neotree toggle<cr>",
-            "Toggle Explorer",
-          },
-          f = {
-            "<cmd>Neotree focus<cr>",
-            "Focus Expolrer",
-          },
-        },
-      },
-    },
+    { "n", "<leader>ee", "<cmd>Neotree toggle<cr>", {}, "Neotree toggle" },
+    { "n", "<leader>ef", "<cmd>Neotree focus<cr>",  {}, "Neotree focus" },
   },
   noRegistry = {
     -- insert
-    { "i", "jk", "<Esc>" },
-    { "i", "<A-h>", "<Left>" },
-    { "i", "<A-l>", "<Right>" },
-    { "i", "<A-k>", "<Up>" },
-    { "i", "<A-j>", "<Down>" },
+    { "i", "jk",    "<Esc>",   {}, "Exist insert mode" },
+    { "i", "<A-h>", "<Left>",  {}, "Left in insert mode" },
+    { "i", "<A-l>", "<Right>", {}, "Right in insert mode" },
+    { "i", "<A-k>", "<Up>",    {}, "Up in insert mode" },
+    { "i", "<A-j>", "<Down>",  {}, "Down in insert mode" },
 
     -- normal
-    { "n", "H", "^" },
-    { "n", "L", "$" },
-    { "n", "<A-v>", "<C-v>" },
-    { "n", "gb", "<C-o>" },
+    { "n", "H",     "^",       {}, "Go the head in normal mode" },
+    { "n", "L",     "$",       {}, "Go the end in normal mode " },
+    { "n", "<A-v>", "<C-v>",   {}, "Enter column visual mode" },
+    { "n", "gb",    "<C-o>",   {}, "Back forward" },
 
     -- visual
-    { "v", "H", "^" },
-    { "v", "L", "$" },
+    { "v", "H",     "^",       {}, "Go the head in visual mode" },
+    { "v", "L",     "$",       {}, "Go the end in visual mode" },
   },
 }
 
-local wk = require("which-key")
+local tools = require("tools.tool")
 
 for _, v in pairs(M.registry) do
-  local opt = vim.tbl_extend("force", default_opt, v.opt or {})
-  wk.register(v.map, opt)
+  tools.setkeydynamic(v)
 end
 
 for _, v in pairs(M.noRegistry) do
-  local opt = vim.tbl_extend("force", default_no_opt, v[4] or {})
-  vim.keymap.set(v[1], v[2], v[3], opt)
+  tools.setkeydynamic(v)
 end
