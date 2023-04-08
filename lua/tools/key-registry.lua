@@ -29,7 +29,21 @@ local M = {
     }
   },
   noRegistry = {
-    { "i", "jk", "<Esc>" }
+    -- insert
+    { "i", "jk", "<Esc>" },
+    { "i", "<A-h>", "<Left>" },
+    { "i", "<A-l>", "<Right>" },
+    { "i", "<A-k>", "<Up>" },
+    { "i", "<A-j>", "<Down>" },
+
+    -- normal
+    { "n", "H", "^" },
+    { "n", "L", "$" },
+
+    -- visual
+    { "v", "H", "^" },
+    { "v", "L", "$" },
+
   }
 }
 
