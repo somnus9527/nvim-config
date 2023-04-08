@@ -7,6 +7,7 @@ return {
       { "folke/neodev.nvim", opts = { experimental = { pathStrict = true } } },
       "mason.nvim",
       "williamboman/mason-lspconfig.nvim",
+      "hrsh7th/cmp-nvim-lsp",
     },
     opts = {
       servers = {
@@ -35,8 +36,13 @@ return {
       },
     },
     config = function(_, opts)
+      require("tools.tool").on_attach(function(client, buffer)
+        require("tools.lsp").on_attach(client, buffer)
+        require("tools.lsp-keymaps").on_attach(client, buffer)
+      end)
       local servers = opts.servers
-      local capabilities = vim.lsp.protocol.make_client_capabilities()
+      -- local capabilities = vim.lsp.protocol.make_client_capabilities()
+      local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
       local function setup(server)
         local server_opts = vim.tbl_deep_extend("force", {

@@ -13,20 +13,22 @@ local M = {
   registry = {
     {
       opt = {
-        prefix = "<leader>"
+        prefix = "<leader>",
       },
       map = {
         e = {
           name = "NeoTree",
           e = {
-            "<cmd>Neotree toggle<cr>", "Toggle Explorer",
+            "<cmd>Neotree toggle<cr>",
+            "Toggle Explorer",
           },
           f = {
-            "<cmd>Neotree focus<cr>", "Focus Expolrer",
-          }
-        }
-      }
-    }
+            "<cmd>Neotree focus<cr>",
+            "Focus Expolrer",
+          },
+        },
+      },
+    },
   },
   noRegistry = {
     -- insert
@@ -39,22 +41,23 @@ local M = {
     -- normal
     { "n", "H", "^" },
     { "n", "L", "$" },
+    { "n", "<A-v>", "<C-v>" },
+    { "n", "gb", "<C-o>" },
 
     -- visual
     { "v", "H", "^" },
     { "v", "L", "$" },
-
-  }
+  },
 }
 
-local wk = require "which-key"
+local wk = require("which-key")
 
-for _,v in pairs(M.registry) do
-  local opt = vim.tbl_extend("force",default_opt,v.opt or {})
-  wk.register(v.map,opt)
+for _, v in pairs(M.registry) do
+  local opt = vim.tbl_extend("force", default_opt, v.opt or {})
+  wk.register(v.map, opt)
 end
 
-for _,v in pairs(M.noRegistry) do
-  local opt = vim.tbl_extend("force",default_no_opt,v[4] or {})
-  vim.keymap.set(v[1],v[2],v[3],opt)
+for _, v in pairs(M.noRegistry) do
+  local opt = vim.tbl_extend("force", default_no_opt, v[4] or {})
+  vim.keymap.set(v[1], v[2], v[3], opt)
 end

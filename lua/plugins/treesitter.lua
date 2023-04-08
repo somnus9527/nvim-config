@@ -12,6 +12,7 @@ return {
           local plugin = require("lazy.core.config").spec.plugins["nvim-treesitter"]
           local opts = require("lazy.core.plugin").values(plugin, "opts", false)
           local enabled = false
+
           if opts.textobjects then
             for _, mod in ipairs({ "move", "select", "swap", "lsp_interop" }) do
               if opts.textobjects[mod] and opts.textobjects[mod].enable then
@@ -27,8 +28,9 @@ return {
       },
     },
     keys = {
-      { "<A-n>", desc = "Increment selection" },
-      { "<A-m>", desc = "Decrement selection", mode = "x" },
+      -- 后续会增加类expend-region插件，这个不好用，注释掉
+      -- { "<A-n>", desc = "Increment selection" },
+      -- { "<A-m>", desc = "Decrement selection", mode = "x" },
     },
     opts = {
       highlight = { enable = true },
@@ -53,15 +55,16 @@ return {
         "vim",
         "yaml",
       },
-      incremental_selection = {
-        enable = true,
-        keymaps = {
-          init_selection = "<A-n>",
-          node_incremental = "<A-n>",
-          scope_incremental = "<nop>",
-          node_decremental = "<A-m>",
-        },
-      },
+      -- 同keys的注释
+      -- incremental_selection = {
+      -- enable = true,
+      -- keymaps = {
+      --  init_selection = "<A-n>",
+      --  node_incremental = "<A-n>",
+      --  scope_incremental = "<nop>",
+      --  node_decremental = "<A-m>",
+      -- },
+      --},
     },
     config = function(_, opts)
       require("nvim-treesitter.configs").setup(opts)
