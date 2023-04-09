@@ -20,6 +20,8 @@ local M = {
     { "n", "L", "$", {}, "Go the end in normal mode " },
     { "n", "<A-v>", "<C-v>", {}, "Enter column visual mode" },
     { "n", "gb", "<C-o>", {}, "Back forward" },
+    { "n", "|", "<cmd>vsplit<cr>", {}, "Vertical split" },
+    { "n", "\\", "<cmd>split<cr>", {}, "Horizental split", },
     -- 不好用 
     -- { "n", "<A-w>", "<cmd>ExpSel<cr>", {}, "Expand selection" },
 
