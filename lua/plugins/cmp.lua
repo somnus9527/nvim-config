@@ -22,9 +22,11 @@ return {
         function()
           return require("luasnip").jumpable(1) and "<Plug>luasnip-jump-next" or "<tab>"
         end,
-        expr = true, silent = true, mode = "i",
+        expr = true,
+        silent = true,
+        mode = "i",
       },
-      { "<tab>", function() require("luasnip").jump(1) end, mode = "s" },
+      { "<tab>",   function() require("luasnip").jump(1) end,  mode = "s" },
       { "<s-tab>", function() require("luasnip").jump(-1) end, mode = { "i", "s" } },
     },
   },
@@ -37,7 +39,9 @@ return {
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
       "saadparwaiz1/cmp_luasnip",
+      "hrsh7th/cmp-cmdline",
       "L3MON4D3/LuaSnip",
+      "windwp/nvim-autopairs",
     },
     opts = function()
       local cmp = require("cmp")
@@ -68,6 +72,7 @@ return {
           { name = "luasnip" },
           { name = "buffer" },
           { name = "path" },
+          { name = "cmdline" },
         }),
         experimental = {
           ghost_text = {
@@ -77,4 +82,10 @@ return {
       }
     end,
   },
+  config = function(...)
+    local cmp = require("cmp")
+    cmp.setup(...)
+    local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+    cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
+  end,
 }

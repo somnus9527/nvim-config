@@ -34,6 +34,12 @@ return {
         },
       },
     },
+    -- TODO: FIX: 不知道为啥设置成下拉的样式不生效，有机会再处理吧
+    pickers = {
+      find_files = {
+        theme = "dropdown",
+      },
+    },
   },
   config = function()
     local keymaps = {

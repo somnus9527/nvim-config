@@ -27,6 +27,7 @@ return {
           end
         end,
       },
+      "windwp/nvim-ts-autotag",
     },
     keys = {
       -- 后续会增加类expend-region插件，这个不好用，注释掉
@@ -59,6 +60,9 @@ return {
         "css",
         "vue",
       },
+      autotag = {
+        enable = true,
+      }
       -- 同keys的注释
       -- incremental_selection = {
       -- enable = true,

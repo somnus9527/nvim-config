@@ -1,25 +1,41 @@
 local M = {
   registry = {
     { "n", "<leader>ee", "<cmd>Neotree toggle<cr>", {}, "Neotree toggle" },
-    { "n", "<leader>ef", "<cmd>Neotree focus<cr>",  {}, "Neotree focus" },
+    { "n", "<leader>ef", "<cmd>Neotree focus<cr>", {}, "Neotree focus" },
+    { "n", "<leader>bn", "<cmd>BufferLineCycleNext<cr>", {}, "Buffer Next" },
+    { "n", "<leader>bp", "<cmd>BufferLineCyclePrev<cr>", {}, "Buffer Previous" },
+    { "n", "<leader>bc", "<cmd>BufferLinePick<cr>", {}, "Choose buffer" },
+    { "n", "<leader>bx", "<cmd>BufferLinePickClose<cr>", {}, "Choose buffer to close" },
   },
   noRegistry = {
     -- insert
-    { "i", "jk",    "<Esc>",   {}, "Exist insert mode" },
-    { "i", "<A-h>", "<Left>",  {}, "Left in insert mode" },
+    { "i", "jk", "<Esc>", {}, "Exist insert mode" },
+    { "i", "<A-h>", "<Left>", {}, "Left in insert mode" },
     { "i", "<A-l>", "<Right>", {}, "Right in insert mode" },
-    { "i", "<A-k>", "<Up>",    {}, "Up in insert mode" },
-    { "i", "<A-j>", "<Down>",  {}, "Down in insert mode" },
+    { "i", "<A-k>", "<Up>", {}, "Up in insert mode" },
+    { "i", "<A-j>", "<Down>", {}, "Down in insert mode" },
 
     -- normal
-    { "n", "H",     "^",       {}, "Go the head in normal mode" },
-    { "n", "L",     "$",       {}, "Go the end in normal mode " },
-    { "n", "<A-v>", "<C-v>",   {}, "Enter column visual mode" },
-    { "n", "gb",    "<C-o>",   {}, "Back forward" },
+    { "n", "H", "^", {}, "Go the head in normal mode" },
+    { "n", "L", "$", {}, "Go the end in normal mode " },
+    { "n", "<A-v>", "<C-v>", {}, "Enter column visual mode" },
+    { "n", "gb", "<C-o>", {}, "Back forward" },
 
     -- visual
-    { "v", "H",     "^",       {}, "Go the head in visual mode" },
-    { "v", "L",     "$",       {}, "Go the end in visual mode" },
+    { "v", "H", "^", {}, "Go the head in visual mode" },
+    { "v", "L", "$", {}, "Go the end in visual mode" },
+
+    -- operator
+    { "o", "(", "i)", {}, "Operate whole content in ()" },
+    { "o", ")", "a)", {}, "Operate whole content in (), contain ()" },
+    { "o", "'", "i'", {}, "Operate whole content in ''" },
+    { "o", '"', 'i"', {}, 'Operate whole content in ""' },
+    { "o", "[", "i]", {}, "Operate whole content in []" },
+    { "o", "]", "a]", {}, "Operate whole content in [], contain []" },
+    { "o", "{", "i}", {}, "Operate whole content in {}" },
+    { "o", "}", "a}", {}, "Operate whole content in {}, contain {}" },
+    { "o", "<", "i>", {}, "Operate whole content in <>" },
+    { "o", "<", "a>", {}, "Operate whole content in <>, contain <>" },
   },
 }
 
