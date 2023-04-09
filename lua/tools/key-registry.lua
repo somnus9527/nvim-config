@@ -20,6 +20,8 @@ local M = {
     { "n", "L", "$", {}, "Go the end in normal mode " },
     { "n", "<A-v>", "<C-v>", {}, "Enter column visual mode" },
     { "n", "gb", "<C-o>", {}, "Back forward" },
+    -- 不好用 
+    -- { "n", "<A-w>", "<cmd>ExpSel<cr>", {}, "Expand selection" },
 
     -- visual
     { "v", "H", "^", {}, "Go the head in visual mode" },
