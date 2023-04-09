@@ -46,7 +46,8 @@ return {
       { "n", "<leader>,", "<cmd>Telescope buffers show_all_buffers=true<cr>", {}, "Switch buffers" },
       { "n", "<leader>/", tools.telescope("live_grep"), {}, "Find in Files (Grep)" },
       { "n", "<leader>:", "<cmd>Telescope command_history<cr>", {}, "Command history" },
-      { "n", "<leader>ff", tools.telescope("files"), {}, "Find files (root dir)" },
+      -- 太常用了 从<space>ff -> <space><space>
+      { "n", "<leader><space>", tools.telescope("files"), {}, "Find files (root dir)" },
       { "n", "<leader>fb", "<cmd>Telescope buffers<cr>", {}, "Find buffers" },
       { "n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", {}, "Recent files" },
       {

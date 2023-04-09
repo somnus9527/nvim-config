@@ -2,6 +2,10 @@ return {
   "folke/noice.nvim",
   event = "VeryLazy",
   opts = {
+    -- 加了这个配置，虽然丢失了一些小功能，但是解决了neovide crash的问题。。。，就这样吧
+    messages = {
+      view = false,
+    },
     lsp = {
       override = {
         ["vim.lsp.util.convert_input_to_markdown_lines"] = true,

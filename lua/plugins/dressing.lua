@@ -12,4 +12,14 @@ return {
       return vim.ui.input(...)
     end
   end,
+  opts = {
+    input = {
+      default_prompt = "➤ ",
+      win_options = { winhighlight = "Normal:Normal,NormalNC:Normal" },
+    },
+    select = {
+      backend = { "telescope", "builtin", "nui" },
+      builtin = { win_options = { winhighlight = "Normal:Normal,NormalNC:Normal" } },
+    },
+  },
 }
