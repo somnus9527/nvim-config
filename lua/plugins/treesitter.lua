@@ -28,6 +28,7 @@ return {
         end,
       },
       "windwp/nvim-ts-autotag",
+      "HiPhish/nvim-ts-rainbow2",
     },
     keys = {
       -- 后续会增加类expend-region插件，这个不好用，注释掉
@@ -61,6 +62,9 @@ return {
         "vue",
       },
       autotag = {
+        enable = true,
+      },
+      rainbow = {
         enable = true,
       }
       -- 同keys的注释

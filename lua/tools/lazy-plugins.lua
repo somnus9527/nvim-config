@@ -17,4 +17,7 @@ return {
     "windwp/nvim-ts-autotag",
   },
   { "JoosepAlviste/nvim-ts-context-commentstring", lazy = true },
+  {
+    "HiPhish/nvim-ts-rainbow2",
+  }
 }
