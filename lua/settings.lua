@@ -14,6 +14,12 @@ M.opt = {
   autoindent = true,
   expandtab = true,
   clipboard = "unnamedplus",
+  guifont = { "SpaceMono NF", "h12" },
+  encoding = "utf-8",
+  fileencoding = "utf-8",
+  showmode = false,
+  backup = false,
+  swapfile = true,
 }
 
 
