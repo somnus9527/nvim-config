@@ -28,6 +28,7 @@ return {
         html = {},
         cssls = {},
         cssmodules_ls = {},
+        vuels = {},
       },
       setup = {
         -- example to setup with typescript.nvim

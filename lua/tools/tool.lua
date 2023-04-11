@@ -71,7 +71,7 @@ M.telescope = function (builtin, opts)
         builtin = "find_files"
       end
     end
-    require("telescope.builtin")[builtin](opts)
+    require("telescope.builtin")[builtin](require('telescope.themes').get_dropdown(opts))
   end
 end
 

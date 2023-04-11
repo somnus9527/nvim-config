@@ -2,10 +2,10 @@ local M = {
   registry = {
     { "n", "<leader>ee", "<cmd>Neotree toggle<cr>", {}, "Neotree toggle" },
     { "n", "<leader>ef", "<cmd>Neotree focus<cr>", {}, "Neotree focus" },
-    { "n", "<leader>bn", "<cmd>BufferLineCycleNext<cr>", {}, "Buffer Next" },
-    { "n", "<leader>bp", "<cmd>BufferLineCyclePrev<cr>", {}, "Buffer Previous" },
-    { "n", "<leader>bc", "<cmd>BufferLinePick<cr>", {}, "Choose buffer" },
-    { "n", "<leader>bx", "<cmd>BufferLinePickClose<cr>", {}, "Choose buffer to close" },
+    { "n", "<leader>1", "<cmd>BufferLineCycleNext<cr>", {}, "Buffer Next" },
+    { "n", "<leader>2", "<cmd>BufferLineCyclePrev<cr>", {}, "Buffer Previous" },
+    { "n", "<leader>3", "<cmd>BufferLinePick<cr>", {}, "Choose buffer" },
+    { "n", "<leader>4", "<cmd>BufferLinePickClose<cr>", {}, "Choose buffer to close" },
   },
   noRegistry = {
     -- insert
