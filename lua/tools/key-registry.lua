@@ -22,6 +22,7 @@ local M = {
     { "n", "gb", "<C-o>", {}, "Back forward" },
     { "n", "|", "<cmd>vsplit<cr>", {}, "Vertical split" },
     { "n", "\\", "<cmd>split<cr>", {}, "Horizental split", },
+    { "n", "<leader>gg", "<cmd>LazyGit<cr>", {}, "Open git window" },
     -- 不好用 
     -- { "n", "<A-w>", "<cmd>ExpSel<cr>", {}, "Expand selection" },
 
