@@ -2,10 +2,10 @@
 return {
   "max397574/better-escape.nvim",
   event = "InsertCharPre",
-  config = function ()
-    require("better_escape").setup {
+  config = function()
+    require("better_escape").setup({
       timeout = vim.o.timeoutlen or 300,
-      mapping = { "jk" }
-    }
-  end
+      mapping = { "jk" },
+    })
+  end,
 }
