@@ -3,12 +3,29 @@ local Util = require("lazyvim.util")
 return {
   "nvim-telescope/telescope.nvim",
   keys = function()
+    local layoutopt = {
+      layout_conifg = {
+        width = 0.8,
+      },
+    }
     return {
-      { "<leader>,", "<cmd>Telescope buffers show_all_buffers=true<cr>", desc = "Switch Buffer" },
-      { "<leader>/", Util.telescope("live_grep"), desc = "Find in Files (Grep)" },
-      { "<leader>:", "<cmd>Telescope command_history<cr>", desc = "Command History" },
-      { "<leader><space>", Util.telescope("files"), desc = "Find Files (root dir)" },
-      { "<leader>.", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "Find in current buffer" },
+      {
+        "<leader>,",
+        function()
+          require("telescope.builtin").buffers(layoutopt)
+        end,
+        desc = "Switch Buffer",
+      },
+      { "<leader>/",       Util.telescope("live_grep", layoutopt), desc = "Find in Files (Grep)" },
+      { "<leader>:",       "<cmd>Telescope command_history<cr>",   desc = "Command History" },
+      { "<leader><space>", Util.telescope("files", layoutopt),     desc = "Find Files (root dir)" },
+      {
+        "<leader>.",
+        function()
+          require("telescope.builtin").current_buffer_fuzzy_find(layoutopt)
+        end,
+        desc = "Find in current buffer",
+      },
       {
         "<leader>`",
         Util.telescope("colorscheme", { enable_preview = true }),
@@ -75,5 +92,10 @@ return {
         },
       },
     },
+    pickers = {
+      find_files = {
+        theme = "dropdown",
+      }
+    }
   },
 }

@@ -46,8 +46,9 @@ local keymap = {
   { "n",          "gb",    "<C-o>",              dopt },
   { "n",          "|",     "<cmd>vsplit<cr>",    dopt },
   { "n",          "\\",    "<cmd>split<cr>",     dopt },
-  { "n",          "<A-h>", "<cmd>bprevious<cr>", dopt },
-  { "n",          "<A-l>", "<cmd>bnext<cr>",     dopt },
+  { "n",          "<A-2>", "<cmd>bprevious<cr>", dopt },
+  { "n",          "<A-1>", "<cmd>bnext<cr>",     dopt },
+  { "n", "<F7>", "<cmd>exe v:count1 . 'ToggleTerm'<cr>", dopt },
 }
 
 for _, value in pairs(keymap) do

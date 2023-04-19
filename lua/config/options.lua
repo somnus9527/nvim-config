@@ -7,10 +7,10 @@ local o = vim.o
 
 opt.backup = false
 opt.swapfile = false
-opt.guifont = "SpaceMono NF:h13"
 opt.encoding = "utf-8"
 opt.fileencoding = "utf-8"
 opt.termguicolors = true
 
+o.guifont = "SpaceMono NF:h13"
 o.timeout = true
 o.timeoutlen = 500

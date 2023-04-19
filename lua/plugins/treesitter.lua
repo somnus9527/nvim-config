@@ -9,11 +9,16 @@ return {
         "json5",
         "jsonc",
         "css",
+        "scss",
         "vue",
         "yaml",
         "html",
       })
     end
+    opts.autotag = {
+      enable = true,
+      filetype = { "html", "xml", "vue" },
+    }
   end,
   config = function(_, opts)
     -- 尝试修复成功，windows powershell 环境下需要下载LLVM： https://github.com/llvm/llvm-project/releases/tag/llvmorg-16.0.0，安装完成之后，1. TSUpdate 2. TSInstall parser【确实的parser，我这边是html】，完成之后，退出，refreshenv，重进，成功打开html，这边再次放开
