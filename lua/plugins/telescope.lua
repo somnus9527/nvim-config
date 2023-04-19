@@ -3,26 +3,22 @@ local Util = require("lazyvim.util")
 return {
   "nvim-telescope/telescope.nvim",
   keys = function()
-    local layoutopt = {
-      layout_conifg = {
-        width = 0.8,
-      },
-    }
+    local dropdown = require('telescope.themes').get_dropdown({ layout_config = { width = 0.8 }, winblend = 10 })
     return {
       {
         "<leader>,",
         function()
-          require("telescope.builtin").buffers(layoutopt)
+          require("telescope.builtin").buffers(dropdown)
         end,
         desc = "Switch Buffer",
       },
-      { "<leader>/",       Util.telescope("live_grep", layoutopt), desc = "Find in Files (Grep)" },
+      { "<leader>/",       Util.telescope("live_grep", dropdown), desc = "Find in Files (Grep)" },
       { "<leader>:",       "<cmd>Telescope command_history<cr>",   desc = "Command History" },
-      { "<leader><space>", Util.telescope("files", layoutopt),     desc = "Find Files (root dir)" },
+      { "<leader><space>", Util.telescope("files", dropdown),     desc = "Find Files (root dir)" },
       {
         "<leader>.",
         function()
-          require("telescope.builtin").current_buffer_fuzzy_find(layoutopt)
+          require("telescope.builtin").current_buffer_fuzzy_find(dropdown)
         end,
         desc = "Find in current buffer",
       },
@@ -92,10 +88,5 @@ return {
         },
       },
     },
-    pickers = {
-      find_files = {
-        theme = "dropdown",
-      }
-    }
   },
 }
