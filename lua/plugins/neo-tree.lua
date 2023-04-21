@@ -38,5 +38,12 @@ return {
       },
       follow_current_file = true,
     },
+    window = {
+      -- 禁用原因源自telescope，详情查看README.md
+      mappings = {
+        ["z"] = false,
+        ["Z"] = false,
+      }
+    }
   },
 }

@@ -40,6 +40,7 @@ return {
       vuels = {},
       cssls = {},
       html = {},
+      rust_analyzer = {}
     },
     setup = {
       tsserver = function(_, opts)

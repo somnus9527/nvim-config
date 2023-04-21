@@ -4,6 +4,7 @@
 
 local opt = vim.opt
 local o = vim.o
+local wo = vim.wo
 
 opt.backup = false
 opt.swapfile = false
@@ -14,3 +15,7 @@ opt.termguicolors = true
 o.guifont = "SpaceMono NF:h13"
 o.timeout = true
 o.timeoutlen = 500
+
+wo.foldlevel = 5
+wo.foldmethod = "expr"
+wo.foldexpr = "nvim_treesitter#foldexpr()"

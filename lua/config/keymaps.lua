@@ -1,8 +1,6 @@
 -- Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
-local Util = require("lazyvim.util")
-
 local function map(mode, lhs, rhs, opts)
   local keys = require("lazy.core.handler").handlers.keys
   ---@cast keys LazyKeysHandler
@@ -28,8 +26,11 @@ local keymap = {
   { "i", "<A-b>", "<Esc>bi", dopt },
   { { "v", "o" }, "H", "^", dopt },
   { { "v", "o" }, "L", "$", dopt },
-  { { "v", "o" }, "'", "i'", dopt },
-  { { "v", "o" }, '"', 'i"', dopt },
+  -- 影响到正常snippets的正常输入，暂时也没有更好的办法，先注释
+  -- { { "v", "o" }, "'", "i'", dopt },
+  -- { { "v", "o" }, '"', 'i"', dopt },
+  { "o", "'", "i'", dopt },
+  { "o", '"', 'i"', dopt },
   { { "v", "o" }, "(", "i)", dopt },
   { { "v", "o" }, ")", "a)", dopt },
   { { "v", "o" }, "{", "i}", dopt },

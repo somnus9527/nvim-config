@@ -13,6 +13,8 @@ return {
         "vue",
         "yaml",
         "html",
+        "rust",
+        "toml",
       })
     end
     opts.autotag = {

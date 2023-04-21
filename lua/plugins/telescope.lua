@@ -68,10 +68,10 @@ return {
           ["<a-h>"] = function()
             Util.telescope("find_files", { hidden = true })()
           end,
-          ["<a-n>"] = function(...)
+          ["<c-n>"] = function(...)
             return require("telescope.actions").cycle_history_next(...)
           end,
-          ["<a-m>"] = function(...)
+          ["<c-m>"] = function(...)
             return require("telescope.actions").cycle_history_prev(...)
           end,
           ["<C-f>"] = function(...)
@@ -80,6 +80,12 @@ return {
           ["<C-b>"] = function(...)
             return require("telescope.actions").preview_scrolling_up(...)
           end,
+          ["<a-n>"] = function (...)
+            return require("telescope.actions").move_selection_next(...)
+          end,
+          ["<a-m>"] = function (...)
+            return require("telescope.actions").move_selection_previous(...)
+          end
         },
         n = {
           ["q"] = function(...)

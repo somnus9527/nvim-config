@@ -5,17 +5,17 @@ return {
   },
   keys = {
     {
-      "<leader>df",
+      "<leader>vf",
       "<cmd>DiffviewFileHistory %<cr>",
       desc = "Show current file history & diff",
     },
     {
-      "<leader>do",
+      "<leader>vo",
       "<cmd>DiffviewOpen<cr>",
       desc = "Diffview open",
     },
     {
-      "<leader>dc",
+      "<leader>vc",
       "<cmd>DiffviewClose<cr>",
       desc = "Diffview close"
     }
