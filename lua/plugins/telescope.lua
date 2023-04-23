@@ -85,12 +85,18 @@ return {
           end,
           ["<a-m>"] = function (...)
             return require("telescope.actions").move_selection_previous(...)
+          end,
+          ["<cr>"] = function (...)
+            return require("telescope.actions").select_default(...)
           end
         },
         n = {
           ["q"] = function(...)
             return require("telescope.actions").close(...)
           end,
+          ["<cr>"] = function (...)
+            return require("telescope.actions").select_default(...)
+          end
         },
       },
     },
